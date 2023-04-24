@@ -53,6 +53,8 @@ int _printf(const char *format, ...)
 				count = count - 1;
 				i++;
 			}
+			else
+				return (-1);
 		}
 		else
 		{
