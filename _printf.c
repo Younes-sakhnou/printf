@@ -15,12 +15,13 @@ int _printf(const char *format, ...)
 	char *p, c;
 	va_list args;
 
-	/* Reset i */
+	if (format == NULL)
+		return (-1);
 	i = 0;
 	count = 0;
 	(void) j;
 	va_start(args, format);
-	while (format && format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
