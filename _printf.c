@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 int _strlen(char *ptr);
 
 /**
@@ -15,9 +14,11 @@ int _printf(const char *format, ...)
 	char *p, c;
 	va_list args;
 
+	i = 0;
 	if (!format || (format[i] == '%' && format[i + 1] == '\0'))
 		return (-1);
-	i = 0;
+	if (!format[i])
+		return (0);
 	count = 0;
 	(void) j;
 	va_start(args, format);
