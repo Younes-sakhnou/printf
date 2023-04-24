@@ -1,7 +1,7 @@
 #include "main.h"
+#include <stdio.h>
 
 int _strlen(char *ptr);
-int check_for_percent(const char *p);
 
 /**
  * _printf - function that produces output according to a format.
@@ -15,8 +15,10 @@ int _printf(const char *format, ...)
 	char *p, c;
 	va_list args;
 
-	if (!format || !*format)
+	if (!format)
 		return (-1);
+	if (!*format)
+		return (0);
 	i = count = 0;
 	(void) j;
 	va_start(args, format);
@@ -32,7 +34,7 @@ int _printf(const char *format, ...)
 			{
 				p = va_arg(args, char *);
 				if (!p)
-					return (-1);
+					p = "(null)";
 				j = write(1, p, (_strlen(p)));
 				count = count + _strlen(p) - 2;
 				i++;
@@ -52,7 +54,10 @@ int _printf(const char *format, ...)
 				i++;
 			}
 			else
-				return (-1);
+			{
+				c = '%';
+				j = write(1, &c, 1);
+			}
 		}
 		else
 		{
