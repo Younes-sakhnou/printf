@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 int _strlen(char *ptr);
 
@@ -11,7 +10,7 @@ int _strlen(char *ptr);
  */
 int _printf(const char *format, ...)
 {
-	int i, j, count;
+	int i, j, num, count;
 	char *p, c;
 	va_list args;
 
@@ -44,6 +43,16 @@ int _printf(const char *format, ...)
 				c = va_arg(args, int);
 				j = write(1, &c, 1);
 				count = count - 1;
+				i++;
+			}
+			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+			{
+				num = va_arg(args, int);
+				print_number(num);
+				if (num >= 0)
+					count += get_num_digits(num) - 2;
+				else
+					count += get_num_digits(num) - 1;
 				i++;
 			}
 			else if (format[i + 1] == '%')
