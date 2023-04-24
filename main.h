@@ -5,7 +5,7 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
-void print_number(int num);
 int get_num_digits(int num);
+void print_int_dec(int n);
 int _printf(const char *format, ...);
 #endif

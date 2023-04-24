@@ -48,7 +48,7 @@ int _printf(const char *format, ...)
 			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 			{
 				num = va_arg(args, int);
-				print_number(num);
+				print_int_dec(num);
 				if (num >= 0)
 					count += get_num_digits(num) - 2;
 				else
