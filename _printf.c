@@ -34,9 +34,8 @@ int _printf(const char *format, ...)
 			{
 				p = va_arg(args, char *);
 				if (!p)
-					j = write(1, "(nil)", 5);
-				else
-					j = write(1, p, (_strlen(p)));
+					return (-1);
+				j = write(1, p, (_strlen(p)));
 				count = count + _strlen(p) - 2;
 				i++;
 			}
