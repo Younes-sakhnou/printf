@@ -24,9 +24,13 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
+		if (format[i] == '\0')
+			return (i + count);
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == 's')
+			if (format[i + 1] == '\0')
+				return (-1);
+			else if (format[i + 1] == 's')
 			{
 				p = va_arg(args, char *);
 				if (!p)
