@@ -56,6 +56,7 @@ void print_number(int num)
 		c = buffer[--i];
 		j = write(1, &c, 1);
 	}
+	free(buffer);
 }
 /**
  * get_num_digits - a function that counts the num of digits in a number.
