@@ -55,6 +55,13 @@ int _printf(const char *format, ...)
 					count += get_num_digits(num) - 1;
 				i++;
 			}
+			else if (format[i + 1] == 'b')
+			{
+				binary = va_arg(args, unsigned int);
+				print_binary(binary);
+				count += (unsigned int) get_num_digits(binary) - 2;
+				i++;
+			}
 			else if (format[i + 1] == '%')
 			{
 				c = '%';
