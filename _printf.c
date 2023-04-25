@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, num, count;
 	char *p, c;
-	unsigned int binary;
+	unsigned int binary, unsi, octal, hex, heX;
 	va_list args;
 
 	if (!format)
@@ -60,6 +60,30 @@ int _printf(const char *format, ...)
 			{
 				binary = va_arg(args, unsigned int);
 				count += print_binary(binary) - 2;
+				i++;
+			}
+			else if (format[i + 1] == 'u')
+			{
+				unsi = va_arg(args, unsigned int);
+				count += print_unsig(unsi) - 2;
+				i++;
+			}
+			else if (format[i + 1] == 'o')
+			{
+				octal = va_arg(args, unsigned int);
+				count += print_octal(octal) - 2;
+				i++;
+			}
+			else if (format[i + 1] == 'x')
+			{
+				hex = va_arg(args, unsigned int);
+				count += print_x(hex) - 2;
+				i++;
+			}
+			else if (format[i + 1] == 'X')
+			{
+				heX = va_arg(args, unsigned int);
+				count += print_X(heX) - 2;
 				i++;
 			}
 			else if (format[i + 1] == '%')
