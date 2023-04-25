@@ -42,6 +42,7 @@ unsigned int print_binary(unsigned int n)
 	{
 		c = '0';
 		j = write(1, &c, 1);
+		return (1);
 	}
 
 	return (length);
