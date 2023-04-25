@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 {
 	int i, j, num, count;
 	char *p, c;
+	unsigned int binary;
 	va_list args;
 
 	if (!format)
