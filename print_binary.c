@@ -6,17 +6,17 @@
  *
  * Return: no return.
  */
-void print_binary(unsigned int n)
+unsigned int print_binary(unsigned int n)
 {
 	unsigned int length, power10, i, digit, number;
 	int j;
 	char c;
-	(void) j;
 
+	(void) j;
+	length = 0;
 	if (n != 0)
 	{
 		number = n;
-		length = 0;
 
 		while (number != 0)
 		{
@@ -43,4 +43,6 @@ void print_binary(unsigned int n)
 		c = '0';
 		j = write(1, &c, 1);
 	}
+
+	return (length);
 }

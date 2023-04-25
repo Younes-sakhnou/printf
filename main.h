@@ -8,5 +8,5 @@
 int get_num_digits(int num);
 void print_int_dec(int n);
 int _printf(const char *format, ...);
-void print_binary(unsigned int n);
+unsigned int print_binary(unsigned int n);
 #endif
