@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
 	char *p, c;
 	unsigned int binary, unsi, octal, hex, heX;
 	va_list args;
+	void *ptr;
 
 	if (!format)
 		return (-1);
@@ -92,6 +93,14 @@ int _printf(const char *format, ...)
 				if (!p)
 					p = "(null)";
 				count += print_S(p) - 2;
+				i++;
+			}
+			else if (format[i + 1] == 'p')
+			{
+				ptr = va_arg(args, void *);
+				if (!ptr)
+					ptr = "(null)";
+				count += print_p(ptr) - 2;
 				i++;
 			}
 			else if (format[i + 1] == '%')

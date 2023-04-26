@@ -5,6 +5,7 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdint.h>
 int get_num_digits(int num);
 void print_int_dec(int n);
 int _printf(const char *format, ...);
@@ -16,4 +17,5 @@ unsigned int print_x(unsigned int n);
 unsigned int print_X(unsigned int n);
 void hex_to_char(char c);
 int print_S(char *str);
+int print_p(void *p);
 #endif
