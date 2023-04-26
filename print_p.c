@@ -9,11 +9,17 @@
 int print_p(void *p)
 {
 	int i, j, y, length;
-	char buf[20];
+	char *buf;
 	uintptr_t addr = (uintptr_t) p;
 
 	i = j = y = length = 0;
 	(void) y;
+	buf = malloc(sizeof(char) * (sizeof(uintptr_t) * 2 + 1));
+	if (buf == NULL)
+	{
+		j = write(1, "Error\n", 7);
+		exit(-1);
+	}
 	while (addr != 0)
 	{
 		int digit = addr % 16;
