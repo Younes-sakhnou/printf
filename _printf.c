@@ -99,8 +99,12 @@ int _printf(const char *format, ...)
 			{
 				ptr = va_arg(args, void *);
 				if (!ptr)
-					j = write(1, "(null)", 7);
-				count += print_p(ptr) - 2;
+				{
+					j = write(1, "(nil)(nil)", 10);
+					count += 10 - 2;
+				}
+				else
+					count += print_p(ptr) - 2;
 				i++;
 			}
 			else if (format[i + 1] == '%')
