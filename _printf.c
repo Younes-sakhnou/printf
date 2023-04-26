@@ -99,7 +99,7 @@ int _printf(const char *format, ...)
 			{
 				ptr = va_arg(args, void *);
 				if (!ptr)
-					ptr = "(null)";
+					j = write(1, "(null)", 7);
 				count += print_p(ptr) - 2;
 				i++;
 			}
