@@ -86,6 +86,14 @@ int _printf(const char *format, ...)
 				count += print_X(heX) - 2;
 				i++;
 			}
+			else if (format[i + 1] == 'S')
+			{
+				p = va_arg(args, char *);
+				if (!p)
+					p = "(null)";
+				count += print_S(p) - 2;
+				i++;
+			}
 			else if (format[i + 1] == '%')
 			{
 				c = '%';

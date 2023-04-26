@@ -14,4 +14,6 @@ unsigned int print_octal(unsigned int n);
 unsigned int print_hex(unsigned int n, unsigned int c);
 unsigned int print_x(unsigned int n);
 unsigned int print_X(unsigned int n);
+void hex_to_char(char c);
+int print_S(char *str);
 #endif
