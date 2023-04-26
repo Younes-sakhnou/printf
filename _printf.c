@@ -100,8 +100,8 @@ int _printf(const char *format, ...)
 				ptr = va_arg(args, void *);
 				if (!ptr)
 				{
-					j = write(1, "(nil)(nil)", 10);
-					count += 10 - 2;
+					j = write(1, "(nil)", 5);
+					count += 5 - 2;
 				}
 				else
 					count += print_p(ptr) - 2;
