@@ -43,8 +43,8 @@ Our `_printf` function supports the following format specifiers:
 
 ## Authors
 
-- @adnan-jahbli
-- @younesapi
+- **[adnan-jahbli](https://github.com/adnan-jahbli)**
+- **[younesapi](https://github.com/younesapi)**
 
 ## Acknowledgements
 
